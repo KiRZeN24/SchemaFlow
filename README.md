@@ -1,50 +1,14 @@
-# React + TypeScript + Vite
+# SchemaFlow - Improved Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project aims to improve the existing **SchemaFlow**, starting from scratch and utilizing modern technologies such as **React**, **TypeScript**, **Vite** and **Vitest**.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: A JavaScript library for building interactive user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static typing.
+- **Vite**: A modern and fast build tool for frontend projects.
+- **Vitest**: A fast and easy-to-use testing framework for projects with Vite.
 
-## Expanding the ESLint configuration
+## Objective
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+The primary objective of this project is to improve the existing tool, rewriting it from scratch with a more modern, scalable, and maintainable approach. The implementation will utilize the mentioned technologies to ensure better performance, ease of development, and more robust testing.
