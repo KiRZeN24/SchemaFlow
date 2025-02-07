@@ -13,7 +13,7 @@ function isValidJson(data: string): boolean {
     }
     
     const json = JSON.parse(data);
-    const requiredProperties = ['course', 'active'];
+    const requiredProperties = ['course', 'active', 'units'];
     
     for (const property of requiredProperties) {
       if (!(property in json)) {

@@ -36,4 +36,11 @@ describe('validateJson', () => {
     expect(resultJson.isValid).toBe(false)
     expect(resultJson.message).toBe('The active property is missing in the JSON')  
   });
+
+  it('should return false when there is not the units property in the JSON', () => {
+    const data = '{"course":"ofimática","active":2}'
+    const resultJson = JSON.parse(validateJson(data))
+    expect(resultJson.isValid).toBe(false)
+    expect(resultJson.message).toBe('The units property is missing in the JSON')  
+  });
 });
