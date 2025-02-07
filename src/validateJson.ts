@@ -21,5 +21,9 @@ function isValidJson(data: string): boolean {
       }
     }
 
+    if (json.units.length === 0) {
+      return JSON.stringify({ isValid: false, message: 'The units is empty in the JSON' });
+    }
+
     return JSON.stringify({ isValid: true, message: 'Valid JSON' });
   }
