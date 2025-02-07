@@ -28,5 +28,12 @@ describe('validateJson', () => {
     const resultJson = JSON.parse(validateJson(data))
     expect(resultJson.isValid).toBe(false)
     expect(resultJson.message).toBe('The course property is missing in the JSON')
-    })
+    });
+
+    it('should return false when there is not the active property in the JSON', () => {
+    const data = '{"course":"ofimática","units":[{"id":1,"title":"conceptos basicos"},{"id":2,"title":"tablas de unidades"},{"id":3,"title":"correcion ortografica"}]}'
+    const resultJson = JSON.parse(validateJson(data))
+    expect(resultJson.isValid).toBe(false)
+    expect(resultJson.message).toBe('The active property is missing in the JSON')  
+  });
 });
