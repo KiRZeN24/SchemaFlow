@@ -22,4 +22,11 @@ describe('validateJson', () => {
     expect(resultJson.isValid).toBe(false)
     expect(resultJson.message).toBe('Invalid JSON')
   });
+
+  it('should return false when there is not the course property in the JSON', () => {
+    const data = '{"units":[{"id":1,"title":"conceptos basicos"},{"id":2,"title":"tablas de unidades"},{"id":3,"title":"correcion ortografica"}],"active":2}'
+    const resultJson = JSON.parse(validateJson(data))
+    expect(resultJson.isValid).toBe(false)
+    expect(resultJson.message).toBe('The course property is missing in the JSON')
+    })
 });
