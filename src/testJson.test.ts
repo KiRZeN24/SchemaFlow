@@ -15,4 +15,11 @@ describe('validateJson', () => {
     expect(resultJson.isValid).toBe(true)
     expect(resultJson.message).toBe('Valid JSON')
   });
+
+  it('should return false if data is not json', () => {
+    const data = 'xxx'
+    const resultJson = JSON.parse(validateJson(data))
+    expect(resultJson.isValid).toBe(false)
+    expect(resultJson.message).toBe('Invalid JSON')
+  });
 });
