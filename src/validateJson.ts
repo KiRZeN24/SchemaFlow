@@ -1,3 +1,5 @@
+import Unit from './interfaces';
+
 function isValidJson(data: string): boolean {
     try {
       JSON.parse(data)
@@ -28,6 +30,10 @@ function isValidJson(data: string): boolean {
     for (const unit of json.units) {
       if (typeof unit.id !== 'number') {
         return JSON.stringify({ isValid: false, message: 'The id property is missing in the units JSON' });
+      }
+
+      if (!json.units.some((unit: Unit) => unit.id === json.active)) {
+        return JSON.stringify({ isValid: false, message: 'The id is not active in the JSON' });
       }
     }
 
