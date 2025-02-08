@@ -1,10 +1,14 @@
-export interface CourseData {
+export interface Course {
   course: string;
-  units: object[];
+  units: Unit[];
   active: number;
 }
 
-export function exportHTML(data: CourseData) {
-  const courseTitle = data.course;
-  return `<h1>${courseTitle}</h1>`;
+interface Unit {
+  id: number;
+  title: string;
+}
+
+export function exportHTML(data: Course) {
+  return `<h1>${data.course}</h1>`;
 }
