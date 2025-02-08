@@ -25,5 +25,11 @@ function isValidJson(data: string): boolean {
       return JSON.stringify({ isValid: false, message: 'The units is empty in the JSON' });
     }
 
+    for (const unit of json.units) {
+      if (typeof unit.id !== 'number') {
+        return JSON.stringify({ isValid: false, message: 'The id property is missing in the units JSON' });
+      }
+    }
+
     return JSON.stringify({ isValid: true, message: 'Valid JSON' });
   }

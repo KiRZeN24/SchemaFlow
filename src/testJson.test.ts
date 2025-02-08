@@ -50,4 +50,11 @@ describe('validateJson', () => {
     expect(resultJson.isValid).toBe(false)
     expect(resultJson.message).toBe('The units is empty in the JSON')  
   });
+
+  it('should return false when there is not id in a units', () => {
+    const data = '{"course":"ofimática","units":[{"title":"conceptos basicos"},{"title":"tablas de unidades"},{"title":"correcion ortografica"}],"active":2}'
+    const resultJson = JSON.parse(validateJson(data))
+    expect(resultJson.isValid).toBe(false)
+    expect(resultJson.message).toBe('The id property is missing in the units JSON')
+  });
 });
