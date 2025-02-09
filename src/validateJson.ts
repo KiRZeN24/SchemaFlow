@@ -39,6 +39,10 @@ function isValidJson(data: string): boolean {
       if (typeof unit.title !== 'string' || unit.title.trim() === '') {
         return JSON.stringify({ isValid: false, message: 'The title property is missing in the units JSON' });
       }
+
+      if (json.course.trim() === '') {
+        return JSON.stringify({ isValid: false, message: 'The course title is empty in the JSON' });
+      }
     }
 
     return JSON.stringify({ isValid: true, message: 'Valid JSON' });
