@@ -35,6 +35,10 @@ function isValidJson(data: string): boolean {
       if (!json.units.some((unit: Unit) => unit.id === json.active)) {
         return JSON.stringify({ isValid: false, message: 'The id is not active in the JSON' });
       }
+
+      if (typeof unit.title !== 'string' || unit.title.trim() === '') {
+        return JSON.stringify({ isValid: false, message: 'The title property is missing in the units JSON' });
+      }
     }
 
     return JSON.stringify({ isValid: true, message: 'Valid JSON' });

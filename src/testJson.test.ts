@@ -64,4 +64,11 @@ describe('validateJson', () => {
     expect(resultJson.isValid).toBe(false)
     expect(resultJson.message).toBe('The id is not active in the JSON')
   });
+
+  it('should return false if does not have a title', () => {
+    const data = '{"course":"ofimática","units":[{"id":1,"title":"conceptos basicos"},{"id":2,"title":"tablas de unidades"},{"id":3}],"active":2}'
+    const resultJson = JSON.parse(validateJson(data))
+    expect(resultJson.isValid).toBe(false)
+    expect(resultJson.message).toBe('The title property is missing in the units JSON')
+  });
 });
