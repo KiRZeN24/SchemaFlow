@@ -23,6 +23,10 @@ function isValidJson(data: string): boolean {
       }
     }
 
+    if (typeof json.active !== 'number') {
+      return JSON.stringify({ isValid: false, message: 'The active is not a number in the JSON' });
+    }
+
     if (json.units.length === 0) {
       return JSON.stringify({ isValid: false, message: 'The units is empty in the JSON' });
     }
