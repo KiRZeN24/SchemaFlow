@@ -15,4 +15,9 @@ describe("exportHTML", () => {
     const result = exportHTML(data);
     expect(result).toContain("<h1>Essential Office Skills for Beginners</h1>");
   });
+  it('Deberiamos convertir la propiedad Unidades', () => {
+    const data ={"course":"ofimática","units":[{"id":1,"title":"conceptos basicos"},{"id":2,"title":"tablas de unidades"},{"id":3,"title":"correcion ortografica"}],"active":2}
+    const resultHtml=exportHTML(data);
+    expect(resultHtml).toContain('<ul><li>conceptos basicos</li><li>tablas de unidades</li></ul>')
+  })
 });

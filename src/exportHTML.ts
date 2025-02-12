@@ -10,5 +10,9 @@ interface Unit {
 }
 
 export function exportHTML(data: Course) {
-  return `<h1>${data.course}</h1>`;
+
+  const units ='<ul><li>conceptos basicos</li><li>tablas de unidades</li></ul>';
+  return `<h1>${data.course}</h1>
+          ${units}`;
+
 }
