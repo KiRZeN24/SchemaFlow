@@ -13,11 +13,15 @@ export function exportHTML(data: Course) {
   let result = '';
   for (const unit of data.units) {
     
+    let content = ''
     if (unit.id === data.active) {
-      result += '<li><strong>'+ unit.title +'</strong></li>';
+      content = `<strong>${unit.title}</strong>`
     }else{
-      result += '<li>' + unit.title + '</li>';
+      content = unit.title;
     }
+
+    result += `<li>${content}</li>`
+
   }
   const units ='<ul>'+ result + '</ul>';
   return `<h1>${data.course}</h1>
