@@ -18,6 +18,6 @@ describe("exportHTML", () => {
   it('Deberiamos convertir la propiedad Unidades', () => {
     const data ={"course":"ofimática","units":[{"id":1,"title":"conceptos basicos"},{"id":2,"title":"tablas de unidades"},{"id":3,"title":"correcion ortografica"}],"active":2}
     const resultHtml=exportHTML(data);
-    expect(resultHtml).toContain('<ul><li>conceptos basicos</li><li>tablas de unidades</li></ul>')
+    expect(resultHtml).toContain('<ul><li>conceptos basicos</li><li>tablas de unidades</li><li>correcion ortografica</li></ul>')
   })
 });

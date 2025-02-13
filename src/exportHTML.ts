@@ -10,9 +10,12 @@ interface Unit {
 }
 
 export function exportHTML(data: Course) {
+  let result = '';
+  for (const unit of data.units) {
+    result += '<li>'+ unit.title +'</li>';
+  }
 
-  const units ='<ul><li>conceptos basicos</li><li>tablas de unidades</li></ul>';
+  const units ='<ul>'+ result + '</ul>';
   return `<h1>${data.course}</h1>
           ${units}`;
-
 }
