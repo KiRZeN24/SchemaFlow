@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { validateJson } from './validateJson'
+import { validateJson } from '../validateJson'
 
 describe('validateJson', () => {
   it('should return false', () => {
