@@ -1,6 +1,10 @@
-interface Unit {
+export interface Unit {
     id: number;
     title: string;
   }
 
-  export default Unit
+  export interface Course {
+    course: string;
+    units: Unit[];
+    active: number;
+  }

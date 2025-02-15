@@ -1,13 +1,4 @@
-export interface Course {
-  course: string;
-  units: Unit[];
-  active: number;
-}
-
-interface Unit {
-  id: number;
-  title: string;
-}
+import { Course } from "./interfaces";
 
 export function exportHTML(data: Course) {
   let result = '';

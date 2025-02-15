@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { exportHTML, Course } from "../exportHTML";
+import { exportHTML } from "../exportHTML";
+import { Course } from "../interfaces";
 
 describe("exportHTML", () => {
   it("should create the h1 for the course title", () => {
