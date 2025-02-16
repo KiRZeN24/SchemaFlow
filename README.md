@@ -12,3 +12,11 @@ This project aims to improve the existing **SchemaFlow**, starting from scratch 
 ## Objective
 
 The primary objective of this project is to improve the existing tool, rewriting it from scratch with a more modern, scalable, and maintainable approach. The implementation will utilize the mentioned technologies to ensure better performance, ease of development, and more robust testing.
+
+## Wireframe
+
+This is a wireframe created using the Penpot application:
+
+![SchemaFlow](https://raw.githubusercontent.com/KiRZeN24/SchemaFlow/refs/heads/main/img_github_readme/wireframe.png)
+
+You can also find this Penpot wireframe file in this repository, under the designs/wireframe folder.
