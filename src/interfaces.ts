@@ -8,3 +8,9 @@ export interface Unit {
     units: Unit[];
     active: number;
   }
+
+  export interface FormData {
+    course: string;
+    active: string;
+    units: string[];
+  }
