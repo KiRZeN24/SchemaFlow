@@ -11,6 +11,6 @@ export interface Unit {
 
   export interface FormData {
     course: string;
-    active: string;
-    units: string[];
+    active: number;
+    units: Unit[];
   }
