@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { validateJson } from "./validateJson";
 import { exportHTML } from "./exportHTML";
-import { FormData, Unit, Course } from "./interfaces";
-import './schemaForm.css';
+import { FormData, Unit } from "./interfaces";
+import "./schemaForm.css";
 
 const SchemaForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -12,6 +12,7 @@ const SchemaForm: React.FC = () => {
   });
   const [newSubtitle, setNewSubtitle] = useState("");
   const [error, setError] = useState("");
+  const [generatedHtml, setGeneratedHtml] = useState<string>("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, course: e.target.value });
@@ -20,7 +21,7 @@ const SchemaForm: React.FC = () => {
   const handleAddSubtitle = () => {
     if (newSubtitle.trim() && !formData.units.some(unit => unit.title === newSubtitle)) {
       const newUnit: Unit = { id: formData.units.length + 1, title: newSubtitle };
-  
+
       setFormData({
         ...formData,
         units: [...formData.units, newUnit],
@@ -28,11 +29,11 @@ const SchemaForm: React.FC = () => {
       setNewSubtitle("");
     }
   };
-  
+
   const handleSetActive = (unitId: number) => {
     setFormData({ ...formData, active: unitId });
   };
-  
+
   const handleRemoveSubtitle = (unitId: number) => {
     setFormData({
       ...formData,
@@ -42,22 +43,12 @@ const SchemaForm: React.FC = () => {
   };
 
   const handleGenerateHTML = () => {
-    const jsonString = JSON.stringify(formData);
-    const validationResponse = validateJson(jsonString);
-    const validationResult = JSON.parse(validationResponse);
-    
-    if (validationResult.isValid) {
-      const courseData: Course = {
-        course: formData.course,
-        active: formData.active,
-        units: formData.units,
-      };
-  
-      const htmlOutput = exportHTML(courseData);
-      console.log("Generated HTML:", htmlOutput);
+    if (validateJson(JSON.stringify(formData))) {
+      const htmlOutput = exportHTML(formData);
+      setGeneratedHtml(htmlOutput);
       setError("");
     } else {
-      setError(validationResult.message);
+      setError("Invalid schema data. Please check the form.");
     }
   };
 
@@ -84,18 +75,27 @@ const SchemaForm: React.FC = () => {
       <label>Set Active Subtitle:</label>
       <ul>
         {formData.units.map((unit) => (
-         <li key={unit.id}>
-          <button onClick={() => handleSetActive(unit.id)}>
-            {unit.title} {formData.active === unit.id ? "(Active)" : ""}
-          </button>
-          <button onClick={() => handleRemoveSubtitle(unit.id)}>Remove</button>
-        </li>
-      ))}
-    </ul>
+          <li key={unit.id}>
+            <button onClick={() => handleSetActive(unit.id)}>
+              {unit.title} {formData.active === unit.id ? "(Active)" : ""}
+            </button>
+            <button onClick={() => handleRemoveSubtitle(unit.id)}>Remove</button>
+          </li>
+        ))}
+      </ul>
       <br />
 
       <button onClick={handleGenerateHTML}>Generate HTML</button>
       {error && <p style={{ color: "red" }}>{error}</p>}
+
+      {generatedHtml && (
+        <div>
+          <h2>Generated HTML:</h2>
+          <pre style={{ background: "#f4f4f4", padding: "10px", borderRadius: "5px" }}>
+            {generatedHtml}
+          </pre>
+        </div>
+      )}
     </div>
   );
 };
