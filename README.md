@@ -20,3 +20,11 @@ This is a wireframe created using the Penpot application:
 ![SchemaFlow](https://raw.githubusercontent.com/KiRZeN24/SchemaFlow/refs/heads/main/img_github_readme/wireframe.png)
 
 You can also find this Penpot wireframe file in this repository, under the designs/wireframe folder.
+
+## Idea proposal
+
+Here's an application proposal designed with Excalidraw:
+
+![SchemaFlow](https://raw.githubusercontent.com/KiRZeN24/SchemaFlow/refs/heads/main/img_github_readme/idea_proposal.png)
+
+You can also find this Excalidraw file in this repository, under the designs/ideas folder.
