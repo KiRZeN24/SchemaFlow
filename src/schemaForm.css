@@ -49,3 +49,19 @@ button {
 .selected {
     background: #6a8;
 }
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.panel {
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+}
+
+.live-preview {
+    flex-grow: 1;
+}

@@ -53,49 +53,53 @@ const SchemaForm: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>SchemaFlow</h1>
-      <label>
-        Main Title:
-        <input type="text" value={formData.course} onChange={handleInputChange} />
-      </label>
-      <br />
-
-      <label>
-        Add Subtitle:
-        <input
-          type="text"
-          value={newSubtitle}
-          onChange={(e) => setNewSubtitle(e.target.value)}
-        />
-        <button onClick={handleAddSubtitle}>Add</button>
-      </label>
-      <br />
-
-      <label>Set Active Subtitle:</label>
-      <ul>
-        {formData.units.map((unit) => (
-          <li key={unit.id}>
-            <button onClick={() => handleSetActive(unit.id)}>
-              {unit.title} {formData.active === unit.id ? "(Active)" : ""}
-            </button>
-            <button onClick={() => handleRemoveSubtitle(unit.id)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-      <br />
-
-      <button onClick={handleGenerateHTML}>Generate HTML</button>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      {generatedHtml && (
-        <div>
-          <h2>Generated HTML:</h2>
-          <pre style={{ background: "#f4f4f4", padding: "10px", borderRadius: "5px" }}>
-            {generatedHtml}
-          </pre>
+    <div className="container">
+      <div className="panel">
+        <h1>SchemaFlow</h1>
+        <label>
+          Main Title:
+          <input type="text" value={formData.course} onChange={handleInputChange} />
+        </label>
+  
+        <label>
+          Add Subtitle:
+          <input
+            type="text"
+            value={newSubtitle}
+            onChange={(e) => setNewSubtitle(e.target.value)}
+          />
+          <button onClick={handleAddSubtitle}>Add</button>
+        </label>
+  
+        <label>Set Active Subtitle:</label>
+        <ul>
+          {formData.units.map((unit) => (
+            <li key={unit.id}>
+              <button onClick={() => handleSetActive(unit.id)}>
+                {unit.title} {formData.active === unit.id ? "(Active)" : ""}
+              </button>
+              <button onClick={() => handleRemoveSubtitle(unit.id)}>Remove</button>
+            </li>
+          ))}
+        </ul>
+  
+        <button onClick={handleGenerateHTML}>Generate HTML</button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
+  
+      <div className="panel live-preview">
+        <h2>Live preview:</h2>
+        <div className="schema-preview">
+          <div className="title">{formData.course || "Main Title"}</div>
+          {formData.units.map((unit) => (
+            <div key={unit.id} className={`subtitle ${formData.active === unit.id ? "selected" : ""}`}>
+              {unit.title}
+            </div>
+          ))}
         </div>
-      )}
+        <h2>Generated HTML:</h2>
+        <textarea value={generatedHtml} readOnly rows={5} />
+      </div>
     </div>
   );
 };
