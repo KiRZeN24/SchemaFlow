@@ -3,7 +3,7 @@ import { exportHTML } from "../exportHTML";
 import { Course } from "../interfaces";
 
 describe("exportHTML", () => {
-  it("should create the h1 for the course title", () => {
+  it("should create the course container with proper styling", () => {
     const data: Course = {
       course: "Essential Office Skills for Beginners",
       units: [
@@ -13,12 +13,36 @@ describe("exportHTML", () => {
       ],
       active: 2,
     };
+
     const result = exportHTML(data);
-    expect(result).toContain("<h1>Essential Office Skills for Beginners</h1>");
+
+    expect(result).toContain(
+      `<div style="font-family: Arial, sans-serif; background-color: #333; color: white; padding: 20px; border-radius: 10px; width: fit-content;">`
+    );
+    expect(result).toMatch(/<h1 .*?>\s*Essential Office Skills for Beginners\s*<\/h1>/);        
   });
-  it('Deberiamos convertir la propiedad Unidades', () => {
-    const data ={"course":"ofimática","units":[{"id":1,"title":"conceptos basicos"},{"id":2,"title":"tablas de unidades"},{"id":3,"title":"correcion ortografica"}],"active":2}
-    const resultHtml=exportHTML(data);
-    expect(resultHtml).toContain('<ul><li>conceptos basicos</li><li><strong>tablas de unidades</strong></li><li>correcion ortografica</li></ul>')
-  })
+
+  it("should convert the units property with proper styling", () => {
+    const data: Course = {
+      course: "Ofimática",
+      units: [
+        { id: 1, title: "conceptos básicos" },
+        { id: 2, title: "tablas de unidades" },
+        { id: 3, title: "corrección ortográfica" },
+      ],
+      active: 2,
+    };
+
+    const resultHtml = exportHTML(data);
+
+    expect(resultHtml).toContain(
+      `<ul style="padding: 0; margin: 0;">`
+    );
+    expect(resultHtml).toContain(
+      `<span style="display: block; background: #6a8; color: white; padding: 10px; border-radius: 5px; margin-top: 5px; font-size: 1em; font-weight: bold;">`
+    );
+    expect(resultHtml).toContain(
+      `<strong>tablas de unidades</strong>`
+    );
+  });
 });
