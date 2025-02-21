@@ -1,5 +1,7 @@
 # SchemaFlow - Improved Project
 
+![SchemaFlow-logo](https://raw.githubusercontent.com/KiRZeN24/SchemaFlow/refs/heads/main/img_github_readme/logo.png)
+
 This project aims to improve the existing **SchemaFlow**, starting from scratch and utilizing modern technologies such as **React**, **TypeScript**, **Vite** and **Vitest**.
 
 ## Technologies Used
