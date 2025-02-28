@@ -19,7 +19,13 @@ The primary objective of this project is to improve the existing tool, rewriting
 
 This is a wireframe created using the Penpot application:
 
-![SchemaFlow](https://raw.githubusercontent.com/KiRZeN24/SchemaFlow/refs/heads/main/img_github_readme/wireframe.png)
+### Schema view wireframe
+
+![schema view](https://raw.githubusercontent.com/KiRZeN24/SchemaFlow/refs/heads/main/img_github_readme/wireframe.png)
+
+### About the app wireframe
+
+![about the app](https://raw.githubusercontent.com/KiRZeN24/SchemaFlow/refs/heads/main/img_github_readme/wireframe_about.png)
 
 You can also find this Penpot wireframe file in this repository, under the designs/wireframe folder.
 
