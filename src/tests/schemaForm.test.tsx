@@ -41,4 +41,20 @@ describe("SchemaForm", () => {
     expect(subtitleButtons.length).toBeGreaterThanOrEqual(2);
 });
 
+it("sets a subtitle as active", () => {
+  render(<SchemaForm />);
+  const subtitleInput = screen.getByLabelText("Add Subtitle:") as HTMLInputElement;
+  const addButton = screen.getByText("Add");
+
+  fireEvent.change(subtitleInput, { target: { value: "Lesson 1" } });
+  fireEvent.click(addButton);
+
+  const activateButton = screen.getAllByText("Lesson 1").find(
+    (el) => el.tagName.toLowerCase() === "button"
+  );
+  fireEvent.click(activateButton!);
+
+  expect(activateButton!.textContent).toContain("(Active)");
+});
+
 });
