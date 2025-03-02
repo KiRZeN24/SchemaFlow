@@ -80,4 +80,16 @@ it("validates JSON before generating HTML", () => {
   expect(validateJson).toHaveBeenCalled();
 });
 
+it("HTML generation in textarea", () => {
+  render(<SchemaForm />);
+  const generateButton = screen.getByText("Generate HTML");
+
+  fireEvent.click(generateButton);
+
+  const textAreas = screen.getAllByRole("textbox") as HTMLTextAreaElement[];
+  const outputArea = textAreas[textAreas.length - 1];
+
+  expect(outputArea).not.toBe("");
+});
+
 });
