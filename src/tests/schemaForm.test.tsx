@@ -26,4 +26,19 @@ describe("SchemaForm", () => {
     fireEvent.change(input, { target: { value: "My Course" } });
     expect(input.value).toBe("My Course");
   });
+
+  it("adds a new subtitle", () => {
+    render(<SchemaForm />);
+  
+    const input = screen.getByLabelText("Add Subtitle:");
+    const addButton = screen.getByText("Add");
+
+    fireEvent.change(input, { target: { value: "Introduction" } });
+    fireEvent.click(addButton);
+
+    const subtitleButtons = screen.getAllByText("Introduction");
+
+    expect(subtitleButtons.length).toBeGreaterThanOrEqual(2);
+});
+
 });
