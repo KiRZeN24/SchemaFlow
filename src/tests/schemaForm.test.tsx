@@ -57,4 +57,18 @@ it("sets a subtitle as active", () => {
   expect(activateButton!.textContent).toContain("(Active)");
 });
 
+it("removes a subtitle", () => {
+  render(<SchemaForm />);
+  const subtitleInput = screen.getByLabelText("Add Subtitle:") as HTMLInputElement;
+  const addButton = screen.getByText("Add");
+
+  fireEvent.change(subtitleInput, { target: { value: "Lesson 2" } });
+  fireEvent.click(addButton);
+
+  const removeButton = screen.getAllByText("Remove")[0];
+  fireEvent.click(removeButton);
+
+  expect(screen.queryByText("Lesson 2")).not.toBeInTheDocument();
+});
+
 });
