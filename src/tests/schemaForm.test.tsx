@@ -71,4 +71,13 @@ it("removes a subtitle", () => {
   expect(screen.queryByText("Lesson 2")).not.toBeInTheDocument();
 });
 
+it("validates JSON before generating HTML", () => {
+  render(<SchemaForm />);
+  const generateButton = screen.getByText("Generate HTML");
+
+  fireEvent.click(generateButton);
+
+  expect(validateJson).toHaveBeenCalled();
+});
+
 });
