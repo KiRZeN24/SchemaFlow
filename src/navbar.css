@@ -10,6 +10,7 @@
     align-items: center;
     color:#444444;
     font-weight: bold;
+    gap:10px;
   }
   
   .navbar-buttons {

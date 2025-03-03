@@ -14,5 +14,9 @@ describe("Navbar", () => {
     expect(within(container).getByRole("link", {name: 'Configuration'})).toHaveAttribute('href','/configuration');
     expect(within(container).getByRole("link", {name: 'About the app'})).toHaveAttribute('href','/about');
   });
+  it("renders an image", () => {
+    const { container } = render(<Navbar />)
+    expect(within(container).getByRole("img")).toHaveAttribute('src', 'src/assets/logo_icon_navbar.png')
+  })
 });
 

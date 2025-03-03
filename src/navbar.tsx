@@ -3,7 +3,10 @@ import "./navbar.css";
 const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
-      <div className="navbar-title">SchemaFlow</div>
+      <div className="navbar-title">
+        <img src="src/assets/logo_icon_navbar.png" />
+        <span>SchemaFlow</span>
+      </div>
       <div className="navbar-buttons">
         <a href="/" className="active">Schema view</a>
         <a href="/configuration">Configuration</a>

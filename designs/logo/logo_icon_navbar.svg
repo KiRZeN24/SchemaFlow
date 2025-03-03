@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="logo_icon_navbar.svg"
+   inkscape:export-filename="..\..\src\assets\logo_icon_navbar.png"
+   inkscape:export-xdpi="24.190475"
+   inkscape:export-ydpi="24.190475"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.75098906"
+     inkscape:cx="397.47583"
+     inkscape:cy="299.6049"
+     inkscape:window-width="1360"
+     inkscape:window-height="764"
+     inkscape:window-x="267"
+     inkscape:window-y="203"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="298.27332"
+       y="619.18346"
+       width="740.357"
+       height="91.878836"
+       id="rect8" />
+    <rect
+       x="335.55749"
+       y="629.83607"
+       width="709.73071"
+       height="106.52619"
+       id="rect7" />
+    <rect
+       x="298.27332"
+       y="619.18346"
+       width="740.357"
+       height="91.878836"
+       id="rect9" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text7"
+       style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect7);display:inline;fill:#ffffff" />
+    <g
+       id="g1"
+       inkscape:export-filename="..\..\src\assets\logo_icon_navbar.png"
+       inkscape:export-xdpi="19.354347"
+       inkscape:export-ydpi="19.354347">
+      <circle
+         style="fill:#ffffff;stroke-width:0.182513"
+         id="path6"
+         cx="45.44389"
+         cy="91.703773"
+         r="26.24733" />
+      <g
+         id="g6"
+         transform="matrix(0.6898148,0,0,0.6898148,-6.695046,-13.543012)">
+        <rect
+           style="fill:#ff8080;stroke-width:0.264583"
+           id="rect2"
+           width="46.153023"
+           height="13.3879"
+           x="-163.88768"
+           y="90.783463"
+           ry="4.2277579"
+           transform="rotate(-75)" />
+        <rect
+           style="fill:#6f917c;stroke-width:0.264583"
+           id="rect3"
+           width="46.153023"
+           height="13.3879"
+           x="-163.88768"
+           y="90.783463"
+           ry="4.2277579"
+           transform="rotate(-75)" />
+        <rect
+           style="fill:#ff8080;stroke-width:0.264583"
+           id="rect4"
+           width="46.153023"
+           height="13.3879"
+           x="-148.01268"
+           y="106.65848"
+           ry="4.2277579"
+           transform="rotate(-75)" />
+        <rect
+           style="fill:#ff8080;stroke-width:0.264583"
+           id="rect5"
+           width="46.153023"
+           height="13.3879"
+           x="-137.42935"
+           y="122.53349"
+           ry="4.2277579"
+           transform="rotate(-75)" />
+        <rect
+           style="fill:#87aade;stroke-width:0.264583"
+           id="rect2-2"
+           width="46.153023"
+           height="13.3879"
+           x="52.387508"
+           y="135.99574"
+           ry="4.2277579" />
+        <rect
+           style="fill:#87aade;stroke-width:0.264583"
+           id="rect6"
+           width="46.153023"
+           height="13.3879"
+           x="44.450001"
+           y="153.9874"
+           ry="4.2277579" />
+      </g>
+    </g>
+  </g>
+</svg>
