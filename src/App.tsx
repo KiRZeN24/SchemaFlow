@@ -1,17 +1,16 @@
 import React from 'react';
 import SchemaForm from './schemaForm';
 import Navbar from './navbar';
+import './App.css';
 
 function App() {
   return (
-    <div className="app-container">
-      <div>
-        <Navbar />
-      </div>
-      <div>
+    <>
+      <Navbar />
+      <div className="container-schema-form">
         <SchemaForm />
       </div>
-    </div>
+    </>
   );
 }
 

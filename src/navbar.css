@@ -1,8 +1,12 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: #bebebe;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
     align-content: center;
   }
   .navbar-title {
@@ -11,11 +15,13 @@
     color:#444444;
     font-weight: bold;
     gap:10px;
+    padding: 10px;
   }
   
   .navbar-buttons {
     display:flex;
     gap: 10px;
+    padding: 10px;
   }
   .navbar-buttons > a {
     background-color: #d3dce1;

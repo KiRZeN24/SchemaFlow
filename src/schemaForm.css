@@ -1,14 +1,9 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #333;
-    color: white;
-    margin: 0;
-    padding: 20px;
-}
 .container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    max-width: 940px;
+    padding: 20px;
 }
 .panel {
     background: #444;
@@ -65,3 +60,4 @@ button {
 .live-preview {
     flex-grow: 1;
 }
+
