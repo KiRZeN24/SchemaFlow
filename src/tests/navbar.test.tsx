@@ -7,5 +7,12 @@ describe("Navbar", () => {
     const { container } = render(<Navbar />);
     expect(within(container).getByText("SchemaFlow")).toBeInTheDocument();
   });
+  it("renders the three buttons: Schema view, Configuration, About the app", () => {
+    const { container } = render(<Navbar />);
+
+    expect(within(container).getByRole("link", {name: 'Schema view'})).toHaveAttribute('href','/');
+    expect(within(container).getByRole("link", {name: 'Configuration'})).toHaveAttribute('href','/configuration');
+    expect(within(container).getByRole("link", {name: 'About the app'})).toHaveAttribute('href','/about');
+  });
 });
 
