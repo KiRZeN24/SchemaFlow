@@ -55,7 +55,7 @@ const SchemaForm: React.FC = () => {
   return (
     <div className="container">
       <div className="panel">
-        <h1>SchemaFlow</h1>
+
         <label>
           Main Title:
           <input type="text" value={formData.course} onChange={handleInputChange} />
