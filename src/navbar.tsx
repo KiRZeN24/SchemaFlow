@@ -4,9 +4,11 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-title">SchemaFlow</div>
-      <a href="/" className="href">Schema view</a>
-      <a href="/configuration" className="href">Configuration</a>
-      <a href="/about" className="href">About the app</a>
+      <div className="navbar-buttons">
+        <a href="/" className="active">Schema view</a>
+        <a href="/configuration">Configuration</a>
+        <a href="/about">About the app</a>
+      </div>
     </nav>
   );
 };

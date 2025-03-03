@@ -1,6 +1,35 @@
 .navbar {
-    background-color: white;
+    background-color: #bebebe;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-content: center;
   }
   .navbar-title {
-    color:black;
+    display: flex;
+    align-items: center;
+    color:#444444;
+    font-weight: bold;
   }
+  
+  .navbar-buttons {
+    display:flex;
+    gap: 10px;
+  }
+  .navbar-buttons > a {
+    background-color: #d3dce1;
+    color: #444444;
+    padding: 5px 10px;
+    border-style: solid ;
+    border-radius: 10px;
+    border-color:white;
+    text-decoration: none;
+  }
+  
+  .navbar-buttons > a.active {
+    background-color: #444444;
+    color: #e8e8e8;
+  }
+  
+  
+  
