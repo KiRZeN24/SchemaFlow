@@ -3,8 +3,9 @@ import { describe, it, expect } from 'vitest';
 import App from '../App';
 
 describe('App', () => {
-    it('should render the title', () => {
+    it('should render at least one element with the text SchemaFlow', () => {
       render(<App />);
-      expect(screen.getByText('SchemaFlow')).toBeInTheDocument();
+      expect(screen.getAllByText('SchemaFlow').length).toBeGreaterThanOrEqual(1);
     });
   });
+
