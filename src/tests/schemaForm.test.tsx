@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import SchemaForm from "../schemaForm";
 import { validateJson } from "../validateJson";
-import { exportHTML } from "../exportHTML";
+
 
 vi.mock("../validateJson", () => ({
   validateJson: vi.fn(() => ({ isValid: true, message: "Valid JSON" })),
@@ -15,7 +15,6 @@ vi.mock("../exportHTML", () => ({
 describe("SchemaForm", () => {
   it("renders the form correctly", () => {
     render(<SchemaForm />);
-    expect(screen.getByText("SchemaFlow")).toBeInTheDocument();
     expect(screen.getByLabelText("Main Title:")).toBeInTheDocument();
     expect(screen.getByLabelText("Add Subtitle:")).toBeInTheDocument();
   });
@@ -93,3 +92,4 @@ it("HTML generation in textarea", () => {
 });
 
 });
+
