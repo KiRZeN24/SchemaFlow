@@ -36,3 +36,7 @@ Here's an application proposal designed with Excalidraw:
 ![SchemaFlow](https://raw.githubusercontent.com/KiRZeN24/SchemaFlow/refs/heads/main/img_github_readme/idea_proposal.png)
 
 You can also find this Excalidraw file in this repository, under the designs/ideas folder.
+
+## How to contribute
+
+Thank you for considering contributing! Please check out our detailed contribution guidelines [here](./CONTRIBUTING.md) to get started.
