@@ -1,16 +1,16 @@
 export interface Unit {
-    id: number;
-    title: string;
-  }
+  id: number
+  title: string
+}
 
-  export interface Course {
-    course: string;
-    units: Unit[];
-    active: number;
-  }
+export interface Course {
+  course: string
+  units: Unit[]
+  active: number
+}
 
-  export interface FormData {
-    course: string;
-    active: number;
-    units: Unit[];
-  }
+export interface FormData {
+  course: string
+  active: number
+  units: Unit[]
+}

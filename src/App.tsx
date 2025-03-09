@@ -1,7 +1,7 @@
-import React from 'react';
-import SchemaForm from './schemaForm';
-import Navbar from './navbar';
-import './App.css';
+import React from 'react'
+import SchemaForm from './schemaForm'
+import Navbar from './navbar'
+import './App.css'
 
 function App() {
   return (
@@ -11,8 +11,7 @@ function App() {
         <SchemaForm />
       </div>
     </>
-  );
+  )
 }
 
-export default App;
-
+export default App

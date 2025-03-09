@@ -1,48 +1,46 @@
-import { describe, expect, it } from "vitest";
-import { exportHTML } from "../exportHTML";
-import { Course } from "../interfaces";
+import { describe, expect, it } from 'vitest'
+import { exportHTML } from '../exportHTML'
+import { Course } from '../interfaces'
 
-describe("exportHTML", () => {
-  it("should create the course container with proper styling", () => {
+describe('exportHTML', () => {
+  it('should create the course container with proper styling', () => {
     const data: Course = {
-      course: "Essential Office Skills for Beginners",
+      course: 'Essential Office Skills for Beginners',
       units: [
-        { id: 1, title: "basic concepts" },
-        { id: 2, title: "creating tables" },
-        { id: 3, title: "orthographic correction" },
+        { id: 1, title: 'basic concepts' },
+        { id: 2, title: 'creating tables' },
+        { id: 3, title: 'orthographic correction' },
       ],
       active: 2,
-    };
+    }
 
-    const result = exportHTML(data);
+    const result = exportHTML(data)
 
     expect(result).toContain(
-      `<div style="font-family: Arial, sans-serif; background-color: #333; color: white; padding: 20px; border-radius: 10px; width: fit-content;">`
-    );
-    expect(result).toMatch(/<h1 .*?>\s*Essential Office Skills for Beginners\s*<\/h1>/);        
-  });
+      `<div style="font-family: Arial, sans-serif; background-color: #333; color: white; padding: 20px; border-radius: 10px; width: fit-content;">`,
+    )
+    expect(result).toMatch(
+      /<h1 .*?>\s*Essential Office Skills for Beginners\s*<\/h1>/,
+    )
+  })
 
-  it("should convert the units property with proper styling", () => {
+  it('should convert the units property with proper styling', () => {
     const data: Course = {
-      course: "Ofimática",
+      course: 'Ofimática',
       units: [
-        { id: 1, title: "conceptos básicos" },
-        { id: 2, title: "tablas de unidades" },
-        { id: 3, title: "corrección ortográfica" },
+        { id: 1, title: 'conceptos básicos' },
+        { id: 2, title: 'tablas de unidades' },
+        { id: 3, title: 'corrección ortográfica' },
       ],
       active: 2,
-    };
+    }
 
-    const resultHtml = exportHTML(data);
+    const resultHtml = exportHTML(data)
 
+    expect(resultHtml).toContain(`<ul style="padding: 0; margin: 0;">`)
     expect(resultHtml).toContain(
-      `<ul style="padding: 0; margin: 0;">`
-    );
-    expect(resultHtml).toContain(
-      `<span style="display: block; background: #6a8; color: white; padding: 10px; border-radius: 5px; margin-top: 5px; font-size: 1em; font-weight: bold;">`
-    );
-    expect(resultHtml).toContain(
-      `<strong>tablas de unidades</strong>`
-    );
-  });
-});
+      `<span style="display: block; background: #6a8; color: white; padding: 10px; border-radius: 5px; margin-top: 5px; font-size: 1em; font-weight: bold;">`,
+    )
+    expect(resultHtml).toContain(`<strong>tablas de unidades</strong>`)
+  })
+})

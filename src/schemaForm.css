@@ -1,63 +1,67 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    max-width: 940px;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 940px;
+  padding: 20px;
 }
 .panel {
-    background: #444;
-    padding: 20px;
-    border-radius: 10px;
-    width: 45%;
+  background: #444;
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
 }
-input, select, button, textarea {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 5px;
+input,
+select,
+button,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
 }
 button {
-    background-color: #2a6;
-    color: white;
-    cursor: pointer;
+  background-color: #2a6;
+  color: white;
+  cursor: pointer;
 }
-.schema-preview, .live-preview {
-    background: black;
-    padding: 10px;
-    border-radius: 5px;
+.schema-preview,
+.live-preview {
+  background: black;
+  padding: 10px;
+  border-radius: 5px;
 }
-.schema-preview div, .live-preview div {
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
+.schema-preview div,
+.live-preview div {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
 }
 .title {
-    background: #556;
-    color: white;
+  background: #556;
+  color: white;
 }
 .subtitle {
-    background: #4a6;
-    color: white;
+  background: #4a6;
+  color: white;
 }
 .selected {
-    background: #6a8;
+  background: #6a8;
 }
 .container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .panel {
-    background: #444;
-    padding: 20px;
-    border-radius: 10px;
-    width: 48%;
+  background: #444;
+  padding: 20px;
+  border-radius: 10px;
+  width: 48%;
 }
 
 .live-preview {
-    flex-grow: 1;
+  flex-grow: 1;
 }
-
