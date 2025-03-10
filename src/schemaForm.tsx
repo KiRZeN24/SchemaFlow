@@ -60,6 +60,16 @@ const SchemaForm: React.FC = () => {
 
   return (
     <div className="container">
+
+<div className="panel">
+        <label>
+          Schema type:
+          <select>
+            <option value="option1">Title with subtitles, and active subtitle</option>
+          </select>
+        </label>
+      </div>
+      
       <div className="panel">
         <label>
           Main Title:
