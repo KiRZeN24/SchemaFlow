@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 import SchemaForm from './schemaForm'
 import Navbar from './navbar'
 import './App.css'

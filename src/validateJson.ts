@@ -1,4 +1,4 @@
-import Unit from './interfaces'
+import { Unit } from './interfaces'
 
 function isValidJson(data: string): boolean {
   try {

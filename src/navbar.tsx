@@ -4,7 +4,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-title">
-        <img src="src/assets/logo_icon_navbar.png" />
+        <img src="./src/assets/logo_icon_navbar.png" />
         <span>SchemaFlow</span>
       </div>
       <div className="navbar-buttons">
