@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/tryitonline/SchemaFlow/',
+  base: './',
   plugins: [react()],
 })
-
