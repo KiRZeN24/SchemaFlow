@@ -37,6 +37,10 @@ Here's an application proposal designed with Excalidraw:
 
 You can also find this Excalidraw file in this repository, under the designs/ideas folder.
 
+## Try it online
+
+https://kirzen24.github.io/tryitonline/SchemaFlow/
+
 ## How to contribute
 
 Thank you for considering contributing! Please check out our detailed contribution guidelines [here](./CONTRIBUTING.md) to get started.
