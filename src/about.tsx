@@ -5,8 +5,6 @@ const About = () => {
     <div className="about-container">
       <div className="about-header">
         <img src="./img_github_readme/logo.png" alt="SchemaFlow Logo" />
-        <h1>SchemaFlow</h1>
-        <p>flow your ideas</p>
       </div>
       <div className="about-content">
         <p>

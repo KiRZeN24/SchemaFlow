@@ -9,17 +9,8 @@
   margin: 40px auto;
 }
 
-.about-header {
-  background-color: #bebebe;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .about-header img {
-  width: 100px;
+  width: 100%;
   height: auto;
 }
 
