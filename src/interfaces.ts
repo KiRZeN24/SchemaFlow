@@ -14,3 +14,8 @@ export interface FormData {
   active: number
   units: Unit[]
 }
+
+export interface NavbarProps {
+  onAboutClick: () => void
+  onSchemaClick: () => void
+}
