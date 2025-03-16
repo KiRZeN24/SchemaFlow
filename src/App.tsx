@@ -1,14 +1,20 @@
-//import React from 'react'
+import { useState } from 'react'
 import SchemaForm from './schemaForm'
 import Navbar from './navbar'
+import About from './about'
 import './App.css'
 
 function App() {
+  const [view, setView] = useState<'schema' | 'about'>('schema')
+
   return (
     <>
-      <Navbar />
+      <Navbar
+        onAboutClick={() => setView('about')}
+        onSchemaClick={() => setView('schema')}
+      />
       <div className="container-schema-form">
-        <SchemaForm />
+        {view === 'about' ? <About /> : <SchemaForm />}
       </div>
     </>
   )
