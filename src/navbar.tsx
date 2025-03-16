@@ -1,6 +1,7 @@
+import { NavbarProps } from './interfaces'
 import './navbar.css'
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<NavbarProps> = ({ onAboutClick, onSchemaClick }) => {
   return (
     <nav className="navbar">
       <div className="navbar-title">
@@ -8,11 +9,11 @@ const Navbar: React.FC = () => {
         <span>SchemaFlow</span>
       </div>
       <div className="navbar-buttons">
-        <a href="/" className="active">
+        <button onClick={onSchemaClick} className="active">
           Schema view
-        </a>
+        </button>
         <a href="/configuration">Configuration</a>
-        <a href="/about">About the app</a>
+        <button onClick={onAboutClick}>About the app</button>
       </div>
     </nav>
   )
