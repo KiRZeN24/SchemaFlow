@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { validateJson } from './validateJson'
 import { exportHTML } from './exportHTML'
 import { FormData, Unit } from './interfaces'
-import './schemaForm.css'
 import SchemaPreview from './schemaPreview'
+import './schemaForm.css'
 
 const SchemaForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({

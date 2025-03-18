@@ -1,6 +1,6 @@
 import React from 'react'
-import './schemaPreview.css'
 import { FormData } from './interfaces'
+import './schemaPreview.css'
 
 interface SchemaPreviewProps {
   formData: FormData

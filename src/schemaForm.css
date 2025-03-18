@@ -15,6 +15,7 @@ input,
 select,
 button,
 textarea {
+  box-sizing: border-box;
   width: 100%;
   padding: 8px;
   margin: 5px 0;
@@ -48,5 +49,10 @@ button {
   padding: 20px;
   border-radius: 10px;
   width: 48%;
+}
+.live-preview div {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
 }
 
