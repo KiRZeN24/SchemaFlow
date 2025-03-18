@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { validateJson } from './validateJson'
 import { exportHTML } from './exportHTML'
 import { FormData, Unit } from './interfaces'
-import SchemaPreview from './schemaPreview'
+import Preview from './preview'
 import './schemaForm.css'
 
 const SchemaForm: React.FC = () => {
@@ -119,7 +119,7 @@ const SchemaForm: React.FC = () => {
 
       <div className="panel live-preview">
         <h2>Live preview:</h2>
-        <SchemaPreview formData={formData} />
+        <Preview formData={formData} />
         <h2>Generated HTML:</h2>
         <textarea value={generatedHtml} readOnly rows={5} />
       </div>
