@@ -18,4 +18,6 @@ export interface FormData {
 export interface NavbarProps {
   onAboutClick: () => void
   onSchemaClick: () => void
+  onConfigurationClick: () => void
 }
+
