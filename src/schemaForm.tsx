@@ -59,16 +59,21 @@ const SchemaForm: React.FC = () => {
     }
   }
 
+  const handleSchemaTypeChange = (value: string) => {
+    setFormData({
+      ...formData,
+      schemaType: Number(value),
+    })
+  }
+
   return (
     <div className="container">
       <div className="panel">
         <label>
           Schema type:
-          <select>
-            <option value="option1">
-              Title with subtitles, and active subtitle
-            </option>
-            <option value="option2">Horizontal items with arrows</option>
+          <select onChange={(e) => handleSchemaTypeChange(e.target.value)}>
+            <option value="1">Title with subtitles, and active subtitle</option>
+            <option value="2">Horizontal items with arrows</option>
           </select>
         </label>
       </div>
