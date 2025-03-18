@@ -45,5 +45,25 @@ describe('exportHTML', () => {
     )
     expect(resultHtml).toContain(`<strong>tablas de unidades</strong>`)
   })
+
+  it('should create the arrows of the schemaType 2 and the flex horizontal style in the ul tag', () => {
+    const data: Course = {
+      schemaType: 2,
+      course: 'Ofimática',
+      units: [
+        { id: 1, title: 'conceptos básicos' },
+        { id: 2, title: 'tablas de unidades' },
+        { id: 3, title: 'corrección ortográfica' },
+      ],
+      active: 2,
+    }
+
+    const resultHtml = exportHTML(data)
+
+    expect(resultHtml).toContain(`➡️`)
+    expect(resultHtml).toContain(
+      `<ul style="padding: 0; margin: 0; display: flex; list-style: none;">`,
+    )
+  })
 })
 
