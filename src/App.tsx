@@ -5,13 +5,16 @@ import About from './about'
 import './App.css'
 
 function App() {
-  const [view, setView] = useState<'schema' | 'about'>('schema')
+  const [view, setView] = useState<'schema' | 'about' | 'configuration'>(
+    'schema',
+  )
 
   return (
     <>
       <Navbar
         onAboutClick={() => setView('about')}
         onSchemaClick={() => setView('schema')}
+        onConfigurationClick={() => setView('configuration')}
       />
       <div className="container-schema-form">
         {view === 'about' ? <About /> : <SchemaForm />}
@@ -21,3 +24,4 @@ function App() {
 }
 
 export default App
+
