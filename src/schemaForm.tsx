@@ -6,6 +6,7 @@ import './schemaForm.css'
 
 const SchemaForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
+    schemaType: 1,
     course: '',
     active: 0,
     units: [],
@@ -132,4 +133,3 @@ const SchemaForm: React.FC = () => {
 }
 
 export default SchemaForm
-
