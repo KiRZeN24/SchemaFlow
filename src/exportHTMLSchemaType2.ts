@@ -1,8 +1,8 @@
 import { Course } from './interfaces'
 
-export function exportHTMLSchema2(data: Course) {
+export function exportHTMLSchemaType2(data: Course) {
   const units = data.units.map((unit, index) => {
-    let content = `<span style="display: inline-block; background: #111; color: white; padding: 10px; border-radius: 5px; font-size: 1em;">
+    let content = `<span style="display: inline-block; background: #4a6; color: white; padding: 10px; border-radius: 5px; font-size: 1em;">
                      ${unit.title}
                    </span>`
 

@@ -1,6 +1,6 @@
 import { Course } from './interfaces'
 
-export function exportHTMLSchema1(data: Course) {
+export function exportHTMLSchemaType1(data: Course) {
   let result = ''
 
   for (const unit of data.units) {
