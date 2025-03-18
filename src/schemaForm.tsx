@@ -60,16 +60,18 @@ const SchemaForm: React.FC = () => {
 
   return (
     <div className="container">
-
-<div className="panel">
+      <div className="panel">
         <label>
           Schema type:
           <select>
-            <option value="option1">Title with subtitles, and active subtitle</option>
+            <option value="option1">
+              Title with subtitles, and active subtitle
+            </option>
+            <option value="option2">Horizontal items with arrows</option>
           </select>
         </label>
       </div>
-      
+
       <div className="panel">
         <label>
           Main Title:
@@ -130,3 +132,4 @@ const SchemaForm: React.FC = () => {
 }
 
 export default SchemaForm
+
