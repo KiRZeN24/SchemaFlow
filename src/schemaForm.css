@@ -15,6 +15,7 @@ input,
 select,
 button,
 textarea {
+  box-sizing: border-box;
   width: 100%;
   padding: 8px;
   margin: 5px 0;
@@ -25,18 +26,6 @@ button {
   background-color: #2a6;
   color: white;
   cursor: pointer;
-}
-.schema-preview,
-.live-preview {
-  background: black;
-  padding: 10px;
-  border-radius: 5px;
-}
-.schema-preview div,
-.live-preview div {
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
 }
 .title {
   background: #556;
@@ -61,7 +50,9 @@ button {
   border-radius: 10px;
   width: 48%;
 }
-
-.live-preview {
-  flex-grow: 1;
+.live-preview div {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
 }
+

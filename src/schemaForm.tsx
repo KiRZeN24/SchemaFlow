@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { validateJson } from './validateJson'
 import { exportHTML } from './exportHTML'
 import { FormData, Unit } from './interfaces'
+import Preview from './preview'
 import './schemaForm.css'
 
 const SchemaForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
+    schemaType: 1,
     course: '',
     active: 0,
     units: [],
@@ -58,18 +60,25 @@ const SchemaForm: React.FC = () => {
     }
   }
 
+  const handleSchemaTypeChange = (value: string) => {
+    setFormData({
+      ...formData,
+      schemaType: Number(value),
+    })
+  }
+
   return (
     <div className="container">
-
-<div className="panel">
+      <div className="panel">
         <label>
           Schema type:
-          <select>
-            <option value="option1">Title with subtitles, and active subtitle</option>
+          <select onChange={(e) => handleSchemaTypeChange(e.target.value)}>
+            <option value="1">Title with subtitles, and active subtitle</option>
+            <option value="2">Horizontal items with arrows</option>
           </select>
         </label>
       </div>
-      
+
       <div className="panel">
         <label>
           Main Title:
@@ -110,18 +119,7 @@ const SchemaForm: React.FC = () => {
 
       <div className="panel live-preview">
         <h2>Live preview:</h2>
-        <div className="schema-preview">
-          <div className="title">{formData.course || 'Main Title'}</div>
-          {formData.units.map((unit) => (
-            <div
-              key={unit.id}
-              className={`subtitle ${
-                formData.active === unit.id ? 'selected' : ''
-              }`}>
-              {unit.title}
-            </div>
-          ))}
-        </div>
+        <Preview formData={formData} />
         <h2>Generated HTML:</h2>
         <textarea value={generatedHtml} readOnly rows={5} />
       </div>
@@ -130,3 +128,4 @@ const SchemaForm: React.FC = () => {
 }
 
 export default SchemaForm
+

@@ -5,6 +5,7 @@ import { Course } from '../interfaces'
 describe('exportHTML', () => {
   it('should create the course container with proper styling', () => {
     const data: Course = {
+      schemaType: 1,
       course: 'Essential Office Skills for Beginners',
       units: [
         { id: 1, title: 'basic concepts' },
@@ -26,6 +27,7 @@ describe('exportHTML', () => {
 
   it('should convert the units property with proper styling', () => {
     const data: Course = {
+      schemaType: 1,
       course: 'Ofimática',
       units: [
         { id: 1, title: 'conceptos básicos' },
@@ -44,3 +46,4 @@ describe('exportHTML', () => {
     expect(resultHtml).toContain(`<strong>tablas de unidades</strong>`)
   })
 })
+

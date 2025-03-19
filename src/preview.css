@@ -1,0 +1,11 @@
+.schema-preview,
+.schema-preview div,
+.live-preview {
+  flex-grow: 1;
+}
+.schema-preview {
+  background: black;
+  padding: 10px;
+  border-radius: 5px;
+}
+

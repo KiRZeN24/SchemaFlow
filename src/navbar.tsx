@@ -1,7 +1,11 @@
 import { NavbarProps } from './interfaces'
 import './navbar.css'
 
-const Navbar: React.FC<NavbarProps> = ({ onAboutClick, onSchemaClick }) => {
+const Navbar: React.FC<NavbarProps> = ({
+  onAboutClick,
+  onSchemaClick,
+  onConfigurationClick,
+}) => {
   return (
     <nav className="navbar">
       <div className="navbar-title">
@@ -12,7 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ onAboutClick, onSchemaClick }) => {
         <button onClick={onSchemaClick} className="active">
           Schema view
         </button>
-        <a href="/configuration">Configuration</a>
+        <button onClick={onConfigurationClick}>Configuration</button>
         <button onClick={onAboutClick}>About the app</button>
       </div>
     </nav>
@@ -20,3 +24,4 @@ const Navbar: React.FC<NavbarProps> = ({ onAboutClick, onSchemaClick }) => {
 }
 
 export default Navbar
+

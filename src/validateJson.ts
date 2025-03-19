@@ -15,7 +15,7 @@ export function validateJson(data: string): string {
   }
 
   const json = JSON.parse(data)
-  const requiredProperties = ['course', 'active', 'units']
+  const requiredProperties = ['course', 'active', 'units', 'schemaType']
 
   for (const property of requiredProperties) {
     if (!(property in json)) {
@@ -72,3 +72,4 @@ export function validateJson(data: string): string {
 
   return JSON.stringify({ isValid: true, message: 'Valid JSON' })
 }
+

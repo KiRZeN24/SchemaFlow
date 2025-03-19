@@ -5,6 +5,7 @@ import About from '../about'
 describe('About', () => {
   it('renders the about correctly', () => {
     const { container } = render(<About />)
-    expect(within(container).getByText('SchemaFlow')).toBeInTheDocument()
+    expect(within(container).getByText('By')).toBeInTheDocument()
   })
 })
+
