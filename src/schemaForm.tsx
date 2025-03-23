@@ -154,16 +154,22 @@ const SchemaForm: React.FC = () => {
               )}
 
               <div className="subtitle-buttons">
-                <button onClick={() => handleRemoveSubtitle(unit.id)}>
+                <button
+                  onClick={() => handleRemoveSubtitle(unit.id)}
+                  aria-label="Remove">
                   <FaTrash />
                 </button>
-                <button onClick={() => handleMoveUp(index)}>
+                <button
+                  onClick={() => handleMoveUp(index)}
+                  aria-label="Move Up">
                   <FaArrowUp />
                 </button>
-                <button onClick={() => handleMoveDown(index)}>
+                <button
+                  onClick={() => handleMoveDown(index)}
+                  aria-label="Move Down">
                   <FaArrowDown />
                 </button>
-                <button onClick={() => startEditing(index)}>
+                <button onClick={() => startEditing(index)} aria-label="Edit">
                   <FaEdit />
                 </button>
               </div>
