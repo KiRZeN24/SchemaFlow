@@ -27,6 +27,9 @@ button {
   color: white;
   cursor: pointer;
 }
+button:hover {
+  background-color: #238b45;
+}
 .title {
   background: #556;
   color: white;
@@ -35,8 +38,48 @@ button {
   background: #4a6;
   color: white;
 }
+.subtitle-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.subtitle-buttons button {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: #666;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitle-buttons button:hover {
+  background: #888;
+}
+
 .selected {
   background: #6a8;
+}
+
+.subtitle-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.subtitle-buttons button {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: #666;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitle-buttons button:hover {
+  background: #888;
 }
 .container {
   display: flex;
@@ -55,4 +98,3 @@ button {
   padding: 10px;
   border-radius: 5px;
 }
-
