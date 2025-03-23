@@ -64,6 +64,17 @@ const SchemaForm: React.FC = () => {
     }
   }
 
+  const handleMoveDown = (index: number) => {
+    if (index < formData.units.length - 1) {
+      const newUnits = [...formData.units]
+      ;[newUnits[index], newUnits[index + 1]] = [
+        newUnits[index + 1],
+        newUnits[index],
+      ]
+      setFormData({ ...formData, units: newUnits })
+    }
+  }
+
   const handleGenerateHTML = () => {
     if (validateJson(JSON.stringify(formData))) {
       const htmlOutput = exportHTML(formData)
