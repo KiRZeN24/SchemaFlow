@@ -137,14 +137,36 @@ const SchemaForm: React.FC = () => {
 
         <label>Set Active Subtitle:</label>
         <ul>
-          {formData.units.map((unit) => (
-            <li key={unit.id}>
-              <button onClick={() => handleSetActive(unit.id)}>
-                {unit.title} {formData.active === unit.id ? '(Active)' : ''}
-              </button>
-              <button onClick={() => handleRemoveSubtitle(unit.id)}>
-                Remove
-              </button>
+          {formData.units.map((unit, index) => (
+            <li key={unit.id} className="subtitle-item">
+              {editingIndex === index ? (
+                <input
+                  type="text"
+                  value={editText}
+                  onChange={(e) => setEditText(e.target.value)}
+                  onBlur={saveEdit}
+                  autoFocus
+                />
+              ) : (
+                <button onClick={() => handleSetActive(unit.id)}>
+                  {unit.title} {formData.active === unit.id ? '(Active)' : ''}
+                </button>
+              )}
+
+              <div className="subtitle-buttons">
+                <button onClick={() => handleRemoveSubtitle(unit.id)}>
+                  <FaTrash />
+                </button>
+                <button onClick={() => handleMoveUp(index)}>
+                  <FaArrowUp />
+                </button>
+                <button onClick={() => handleMoveDown(index)}>
+                  <FaArrowDown />
+                </button>
+                <button onClick={() => startEditing(index)}>
+                  <FaEdit />
+                </button>
+              </div>
             </li>
           ))}
         </ul>
