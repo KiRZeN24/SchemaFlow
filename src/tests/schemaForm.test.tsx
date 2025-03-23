@@ -67,7 +67,7 @@ describe('SchemaForm', () => {
     fireEvent.change(subtitleInput, { target: { value: 'Lesson 2' } })
     fireEvent.click(addButton)
 
-    const removeButton = screen.getAllByText('Remove')[0]
+    const removeButton = screen.getByRole('button', { name: /remove/i })
     fireEvent.click(removeButton)
 
     expect(screen.queryByText('Lesson 2')).not.toBeInTheDocument()
