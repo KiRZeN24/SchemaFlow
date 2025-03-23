@@ -78,7 +78,14 @@ const SchemaForm: React.FC = () => {
     setEditingIndex(index)
     setEditText(formData.units[index].title)
   }
-
+  const saveEdit = () => {
+    if (editingIndex !== null) {
+      const newUnits = [...formData.units]
+      newUnits[editingIndex].title = editText
+      setFormData({ ...formData, units: newUnits })
+      setEditingIndex(null)
+    }
+  }
   const handleGenerateHTML = () => {
     if (validateJson(JSON.stringify(formData))) {
       const htmlOutput = exportHTML(formData)
