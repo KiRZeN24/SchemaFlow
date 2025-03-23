@@ -74,6 +74,10 @@ const SchemaForm: React.FC = () => {
       setFormData({ ...formData, units: newUnits })
     }
   }
+  const startEditing = (index: number) => {
+    setEditingIndex(index)
+    setEditText(formData.units[index].title)
+  }
 
   const handleGenerateHTML = () => {
     if (validateJson(JSON.stringify(formData))) {
