@@ -4,6 +4,7 @@ import { exportHTML } from './exportHTML'
 import { FormData, Unit } from './interfaces'
 import Preview from './preview'
 import './schemaForm.css'
+import { FaTrash, FaArrowUp, FaArrowDown, FaEdit } from 'react-icons/fa'
 
 const SchemaForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -15,6 +16,8 @@ const SchemaForm: React.FC = () => {
   const [newSubtitle, setNewSubtitle] = useState('')
   const [error, setError] = useState('')
   const [generatedHtml, setGeneratedHtml] = useState<string>('')
+  const [editingIndex, setEditingIndex] = useState<number | null>(null)
+  const [editText, setEditText] = useState('')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, course: e.target.value })
@@ -48,6 +51,17 @@ const SchemaForm: React.FC = () => {
       units: formData.units.filter((unit) => unit.id !== unitId),
       active: formData.active === unitId ? 0 : formData.active,
     })
+  }
+
+  const handleMoveUp = (index: number) => {
+    if (index > 0) {
+      const newUnits = [...formData.units]
+      ;[newUnits[index], newUnits[index - 1]] = [
+        newUnits[index - 1],
+        newUnits[index],
+      ]
+      setFormData({ ...formData, units: newUnits })
+    }
   }
 
   const handleGenerateHTML = () => {
@@ -128,4 +142,3 @@ const SchemaForm: React.FC = () => {
 }
 
 export default SchemaForm
-
