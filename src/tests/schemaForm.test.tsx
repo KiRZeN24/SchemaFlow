@@ -94,3 +94,19 @@ describe('SchemaForm', () => {
     expect(outputArea).not.toBe('')
   })
 })
+
+it('moves a subtitle up', () => {
+  render(<SchemaForm />)
+  const addSubtitleInput = screen.getByLabelText(/Add Subtitle:/i)
+  const addButton = screen.getByRole('button', { name: /Add/i })
+
+  fireEvent.change(addSubtitleInput, { target: { value: 'Test Subtitle' } })
+  fireEvent.click(addButton)
+
+  const moveUpButton = screen.getByRole('button', { name: /move up/i })
+
+  expect(moveUpButton).toBeInTheDocument()
+  expect(moveUpButton).toBeEnabled()
+
+  fireEvent.click(moveUpButton)
+})
