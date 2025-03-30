@@ -24,7 +24,10 @@ export function exportHTMLSchemaType2(data: Course) {
     '',
   )}</ul>`
 
+  const commentedJSON = `<!-- ${JSON.stringify(data)} -->`
+
   return `
+      ${commentedJSON}
       <div style="font-family: Arial, sans-serif; background-color: #333; color: white; padding: 20px; border-radius: 10px; width: fit-content;">
         <h1 style="background: #556; color: white; padding: 10px; border-radius: 5px; font-size: 1.2em;">
           ${data.course || 'Main Title'}
@@ -33,4 +36,3 @@ export function exportHTMLSchemaType2(data: Course) {
       </div>
     `
 }
-
