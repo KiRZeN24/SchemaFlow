@@ -45,5 +45,23 @@ describe('exportHTML', () => {
     )
     expect(resultHtml).toContain(`<strong>tablas de unidades</strong>`)
   })
-})
 
+  it('should be the JSON included as a comment in the HTML', () => {
+    const data: Course = {
+      schemaType: 1,
+      course: 'Ofimática',
+      units: [
+        { id: 1, title: 'conceptos básicos' },
+        { id: 2, title: 'tablas de unidades' },
+        { id: 3, title: 'corrección ortográfica' },
+      ],
+      active: 2,
+    }
+
+    const resultHtml = exportHTML(data)
+
+    expect(resultHtml).toContain(
+      `<!-- {"schemaType":1,"course":"Ofimática","units":[{"id":1,"title":"conceptos básicos"},{"id":2,"title":"tablas de unidades"},{"id":3,"title":"corrección ortográfica"}],"active":2} -->`,
+    )
+  })
+})
