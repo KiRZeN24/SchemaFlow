@@ -42,7 +42,11 @@ const SchemaForm: React.FC = () => {
   }
 
   const handleSetActive = (unitId: number) => {
-    setFormData({ ...formData, active: unitId })
+    let newUnitId = unitId
+    if (formData.active === unitId) {
+      newUnitId = 0
+    }
+    setFormData({ ...formData, active: newUnitId })
   }
 
   const handleRemoveSubtitle = (unitId: number) => {

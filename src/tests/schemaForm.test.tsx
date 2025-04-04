@@ -57,6 +57,28 @@ describe('SchemaForm', () => {
     expect(activateButton!.textContent).toContain('(Active)')
   })
 
+  it('remove active if the subtitle is active and the user clics on it', () => {
+    render(<SchemaForm />)
+    const subtitleInput = screen.getByLabelText(
+      'Add Subtitle:',
+    ) as HTMLInputElement
+    const addButton = screen.getByText('Add')
+
+    fireEvent.change(subtitleInput, { target: { value: 'Lesson 1' } })
+    fireEvent.click(addButton)
+
+    const activateButton = screen
+      .getAllByText('Lesson 1')
+      .find((el) => el.tagName.toLowerCase() === 'button')
+
+    // first click
+    fireEvent.click(activateButton!)
+    // second click
+    fireEvent.click(activateButton!)
+
+    expect(activateButton!.textContent).not.toContain('(Active)')
+  })
+
   it('removes a subtitle', () => {
     render(<SchemaForm />)
     const subtitleInput = screen.getByLabelText(
