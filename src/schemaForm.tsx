@@ -5,6 +5,7 @@ import { FormData, Unit } from './interfaces'
 import Preview from './preview'
 import './schemaForm.css'
 import { FaTrash, FaArrowUp, FaArrowDown, FaEdit } from 'react-icons/fa'
+import SchemaFormPanel1 from './schemaFormPanel1'
 
 const SchemaForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -99,26 +100,15 @@ const SchemaForm: React.FC = () => {
       setError('Invalid schema data. Please check the form.')
     }
   }
-
   const handleSchemaTypeChange = (value: string) => {
     setFormData({
       ...formData,
       schemaType: Number(value),
     })
   }
-
   return (
     <div className="container">
-      <div className="panel">
-        <label>
-          Schema type:
-          <select onChange={(e) => handleSchemaTypeChange(e.target.value)}>
-            <option value="1">Title with subtitles, and active subtitle</option>
-            <option value="2">Horizontal items with arrows</option>
-          </select>
-        </label>
-      </div>
-
+      <SchemaFormPanel1 onSchemaTypeChange={handleSchemaTypeChange} />
       <div className="panel">
         <label>
           Main Title:
