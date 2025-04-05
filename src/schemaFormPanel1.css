@@ -1,0 +1,17 @@
+.panel {
+  background: #444;
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+}
+input,
+select,
+button,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+}
