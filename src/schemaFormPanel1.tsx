@@ -3,14 +3,25 @@ import './schemaFormPanel1.css'
 
 interface Props {
   onSchemaTypeChange: (schemaType: string) => void
+  onLoadJSON: (value: string) => void
 }
-const SchemaFormPanel1: React.FC<Props> = ({ onSchemaTypeChange }) => {
+const SchemaFormPanel1: React.FC<Props> = ({
+  onSchemaTypeChange,
+  onLoadJSON,
+}) => {
   const handleSchemaTypeChange = (value: string) => {
     onSchemaTypeChange(value)
+  }
+  const loadJSON = () => {
+    const promptJSON = prompt('insert a JSON')
+    if (promptJSON !== null) {
+      onLoadJSON(promptJSON)
+    }
   }
 
   return (
     <div className="panel">
+      <button onClick={loadJSON}>Load JSON</button>
       <label>
         Schema type:
         <select onChange={(e) => handleSchemaTypeChange(e.target.value)}>

@@ -106,9 +106,21 @@ const SchemaForm: React.FC = () => {
       schemaType: Number(value),
     })
   }
+
+  const handleLoadJSON = (value: string) => {
+    if (validateJson(value)) {
+      setFormData(JSON.parse(value))
+      setError('')
+    } else {
+      setError('Invalid schema data. Please check the form.')
+    }
+  }
   return (
     <div className="container">
-      <SchemaFormPanel1 onSchemaTypeChange={handleSchemaTypeChange} />
+      <SchemaFormPanel1
+        onSchemaTypeChange={handleSchemaTypeChange}
+        onLoadJSON={handleLoadJSON}
+      />
       <div className="panel">
         <label>
           Main Title:
