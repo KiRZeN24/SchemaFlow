@@ -2,6 +2,7 @@ import { useState } from 'react'
 import SchemaForm from './schemaForm'
 import Navbar from './navbar'
 import About from './about'
+import Configuration from './configuration'
 import './App.css'
 
 function App() {
@@ -17,11 +18,12 @@ function App() {
         onConfigurationClick={() => setView('configuration')}
       />
       <div className="container-schema-form">
-        {view === 'about' ? <About /> : <SchemaForm />}
+        {view === 'about' && <About />}
+        {view === 'schema' && <SchemaForm />}
+        {view === 'configuration' && <Configuration />}
       </div>
     </>
   )
 }
 
 export default App
-
