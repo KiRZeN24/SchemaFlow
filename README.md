@@ -27,6 +27,10 @@ This is a wireframe created using the Penpot application:
 
 ![about the app](https://raw.githubusercontent.com/KiRZeN24/SchemaFlow/refs/heads/main/img_github_readme/wireframe_about.png)
 
+### Configuration wireframe
+
+![configuration](https://github.com/user-attachments/assets/f054cef8-680e-4149-9338-6ed48b67e09f)
+
 You can also find this Penpot wireframe file in this repository, under the designs/wireframe folder.
 
 ## Idea proposal
