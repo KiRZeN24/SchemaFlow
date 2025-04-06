@@ -23,4 +23,14 @@ describe('Configuration component', () => {
 
     expect(apiKeyInput.value).toBe('test-key')
   })
+
+  it('activates dark mode by default', () => {
+    render(<Configuration />)
+
+    const darkModeButton = screen.getByRole('button', { name: /Dark mode/i })
+    const lightModeButton = screen.getByRole('button', { name: /Light mode/i })
+
+    expect(darkModeButton).toBeDisabled()
+    expect(lightModeButton).toBeEnabled()
+  })
 })
