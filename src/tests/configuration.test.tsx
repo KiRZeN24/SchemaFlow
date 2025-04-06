@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import Configuration from '../configuration'
 
 describe('Configuration component', () => {
@@ -32,5 +32,19 @@ describe('Configuration component', () => {
 
     expect(darkModeButton).toBeDisabled()
     expect(lightModeButton).toBeEnabled()
+  })
+
+  it('switches to light mode button is clicked', async () => {
+    render(<Configuration />)
+
+    const darkModeButton = screen.getByRole('button', { name: /Dark mode/i })
+    const lightModeButton = screen.getByRole('button', { name: /Light mode/i })
+
+    fireEvent.click(lightModeButton)
+
+    await waitFor(() => {
+      expect(darkModeButton).toBeEnabled()
+      expect(lightModeButton).toBeDisabled()
+    })
   })
 })
