@@ -14,4 +14,13 @@ describe('Configuration component', () => {
       screen.getByRole('button', { name: /Light mode/i }),
     ).toBeInTheDocument()
   })
+
+  it('allows user to type in API key input', () => {
+    render(<Configuration />)
+
+    const apiKeyInput = screen.getByLabelText(/API KEY/i) as HTMLInputElement
+    fireEvent.change(apiKeyInput, { target: { value: 'test-key' } })
+
+    expect(apiKeyInput.value).toBe('test-key')
+  })
 })
