@@ -116,12 +116,12 @@ const SchemaForm: React.FC = () => {
     }
   }
 
-  const getClearedJSON = () => {
-    return JSON.parse(`{"schemaType":1,"course":"","units":[],"active":0}`)
+  const getSchemaType1ClearedJSON = () => {
+    return JSON.parse('{"schemaType":1,"course":"","units":[],"active":0}')
   }
 
   const handleClearAll = () => {
-    setFormData(getClearedJSON())
+    setFormData(getSchemaType1ClearedJSON())
   }
 
   return (
