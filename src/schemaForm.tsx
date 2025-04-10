@@ -117,9 +117,7 @@ const SchemaForm: React.FC = () => {
   }
 
   const getClearedJSON = () => {
-    return JSON.parse(
-      `{"schemaType":${formData.schemaType},"course":"","units":[],"active":0}`,
-    )
+    return JSON.parse(`{"schemaType":1,"course":"","units":[],"active":0}`)
   }
 
   const handleClearAll = () => {
@@ -132,6 +130,7 @@ const SchemaForm: React.FC = () => {
         onSchemaTypeChange={handleSchemaTypeChange}
         onLoadJSON={handleLoadJSON}
         onClearAll={handleClearAll}
+        currentFormData={formData}
       />
       <div className="panel">
         <label>
