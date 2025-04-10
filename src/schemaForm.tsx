@@ -115,11 +115,22 @@ const SchemaForm: React.FC = () => {
       setError('Invalid schema data. Please check the form.')
     }
   }
+
+  const getSchemaType1ClearedJSON = () => {
+    return JSON.parse('{"schemaType":1,"course":"","units":[],"active":0}')
+  }
+
+  const handleClearAll = () => {
+    setFormData(getSchemaType1ClearedJSON())
+  }
+
   return (
     <div className="container">
       <SchemaFormPanel1
         onSchemaTypeChange={handleSchemaTypeChange}
         onLoadJSON={handleLoadJSON}
+        onClearAll={handleClearAll}
+        currentFormData={formData}
       />
       <div className="panel">
         <label>
