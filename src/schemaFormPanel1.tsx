@@ -4,10 +4,12 @@ import './schemaFormPanel1.css'
 interface Props {
   onSchemaTypeChange: (schemaType: string) => void
   onLoadJSON: (value: string) => void
+  onClearAll: () => void
 }
 const SchemaFormPanel1: React.FC<Props> = ({
   onSchemaTypeChange,
   onLoadJSON,
+  onClearAll,
 }) => {
   const handleSchemaTypeChange = (value: string) => {
     onSchemaTypeChange(value)
@@ -19,9 +21,14 @@ const SchemaFormPanel1: React.FC<Props> = ({
     }
   }
 
+  const clearAll = () => {
+    onClearAll()
+  }
+
   return (
     <div className="panel">
       <button onClick={loadJSON}>Load JSON</button>
+      <button onClick={clearAll}>Clear all</button>
       <label>
         Schema type:
         <select onChange={(e) => handleSchemaTypeChange(e.target.value)}>
