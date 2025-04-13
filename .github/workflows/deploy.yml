@@ -13,11 +13,13 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 10
