@@ -1,5 +1,6 @@
 import { NavbarProps } from './interfaces'
 import './navbar.css'
+import logoNavbar from '/src/assets/logo_icon_navbar.png'
 
 const Navbar: React.FC<NavbarProps> = ({
   onAboutClick,
@@ -9,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <nav className="navbar">
       <div className="navbar-title">
-        <img src="./src/assets/logo_icon_navbar.png" />
+        <img src={logoNavbar} alt="Navbar Logo" />
         <span>SchemaFlow</span>
       </div>
       <div className="navbar-buttons">
@@ -24,4 +25,3 @@ const Navbar: React.FC<NavbarProps> = ({
 }
 
 export default Navbar
-

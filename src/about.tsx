@@ -1,10 +1,11 @@
 import './about.css'
+import logoAbout from '/img_github_readme/logo.png'
 
 const About = () => {
   return (
     <div className="about-container">
       <div className="about-header">
-        <img src="./img_github_readme/logo.png" alt="SchemaFlow Logo" />
+        <img src={logoAbout} alt="SchemaFlow Logo" />
       </div>
       <div className="about-content">
         <p>
