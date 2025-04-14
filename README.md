@@ -43,7 +43,7 @@ You can also find this Excalidraw file in this repository, under the designs/ide
 
 ## Try it online
 
-https://kirzen24.github.io/tryitonline/SchemaFlow/
+https://kirzen24.github.io/SchemaFlow/
 
 ## How to contribute
 
