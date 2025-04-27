@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { validateJson } from './validateJson'
 import { exportHTML } from './exportHTML'
-import { FormData, Unit } from './interfaces'
-import Preview from './preview'
-import './schemaForm.css'
-import { FaTrash, FaArrowUp, FaArrowDown, FaEdit } from 'react-icons/fa'
+import { FormData } from './interfaces'
 import SchemaFormPanel1 from './schemaFormPanel1'
+import SchemaFormPanel2 from './schemaFormPanel2'
+import SchemaFormPanel3 from './schemaFormPanel3'
+import './schemaForm.css'
 
 const SchemaForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -29,7 +29,7 @@ const SchemaForm: React.FC = () => {
       newSubtitle.trim() &&
       !formData.units.some((unit) => unit.title === newSubtitle)
     ) {
-      const newUnit: Unit = {
+      const newUnit = {
         id: formData.units.length + 1,
         title: newSubtitle,
       }
@@ -79,10 +79,12 @@ const SchemaForm: React.FC = () => {
       setFormData({ ...formData, units: newUnits })
     }
   }
+
   const startEditing = (index: number) => {
     setEditingIndex(index)
     setEditText(formData.units[index].title)
   }
+
   const saveEdit = () => {
     if (editingIndex !== null) {
       const newUnits = [...formData.units]
@@ -91,6 +93,7 @@ const SchemaForm: React.FC = () => {
       setEditingIndex(null)
     }
   }
+
   const handleGenerateHTML = () => {
     if (validateJson(JSON.stringify(formData))) {
       const htmlOutput = exportHTML(formData)
@@ -100,6 +103,7 @@ const SchemaForm: React.FC = () => {
       setError('Invalid schema data. Please check the form.')
     }
   }
+
   const handleSchemaTypeChange = (value: string) => {
     setFormData({
       ...formData,
@@ -116,12 +120,13 @@ const SchemaForm: React.FC = () => {
     }
   }
 
-  const getSchemaType1ClearedJSON = () => {
-    return JSON.parse('{"schemaType":1,"course":"","units":[],"active":0}')
-  }
-
   const handleClearAll = () => {
-    setFormData(getSchemaType1ClearedJSON())
+    setFormData({
+      schemaType: 1,
+      course: '',
+      active: 0,
+      units: [],
+    })
   }
 
   return (
@@ -132,78 +137,27 @@ const SchemaForm: React.FC = () => {
         onClearAll={handleClearAll}
         currentFormData={formData}
       />
-      <div className="panel">
-        <label>
-          Main Title:
-          <input
-            type="text"
-            value={formData.course}
-            onChange={handleInputChange}
-          />
-        </label>
 
-        <label>
-          Add Subtitle:
-          <input
-            type="text"
-            value={newSubtitle}
-            onChange={(e) => setNewSubtitle(e.target.value)}
-          />
-          <button onClick={handleAddSubtitle}>Add</button>
-        </label>
+      <SchemaFormPanel2
+        formData={formData}
+        newSubtitle={newSubtitle}
+        setNewSubtitle={setNewSubtitle}
+        handleInputChange={handleInputChange}
+        handleAddSubtitle={handleAddSubtitle}
+        handleSetActive={handleSetActive}
+        handleRemoveSubtitle={handleRemoveSubtitle}
+        handleMoveUp={handleMoveUp}
+        handleMoveDown={handleMoveDown}
+        startEditing={startEditing}
+        editingIndex={editingIndex}
+        editText={editText}
+        setEditText={setEditText}
+        saveEdit={saveEdit}
+        handleGenerateHTML={handleGenerateHTML}
+        error={error}
+      />
 
-        <label>Set Active Subtitle:</label>
-        <ul>
-          {formData.units.map((unit, index) => (
-            <li key={unit.id} className="subtitle-item">
-              {editingIndex === index ? (
-                <input
-                  type="text"
-                  value={editText}
-                  onChange={(e) => setEditText(e.target.value)}
-                  onBlur={saveEdit}
-                  autoFocus
-                />
-              ) : (
-                <button onClick={() => handleSetActive(unit.id)}>
-                  {unit.title} {formData.active === unit.id ? '(Active)' : ''}
-                </button>
-              )}
-
-              <div className="subtitle-buttons">
-                <button
-                  onClick={() => handleRemoveSubtitle(unit.id)}
-                  aria-label="Remove">
-                  <FaTrash />
-                </button>
-                <button
-                  onClick={() => handleMoveUp(index)}
-                  aria-label="Move Up">
-                  <FaArrowUp />
-                </button>
-                <button
-                  onClick={() => handleMoveDown(index)}
-                  aria-label="Move Down">
-                  <FaArrowDown />
-                </button>
-                <button onClick={() => startEditing(index)} aria-label="Edit">
-                  <FaEdit />
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
-
-        <button onClick={handleGenerateHTML}>Generate HTML</button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-      </div>
-
-      <div className="panel live-preview">
-        <h2>Live preview:</h2>
-        <Preview formData={formData} />
-        <h2>Generated HTML:</h2>
-        <textarea value={generatedHtml} readOnly rows={5} />
-      </div>
+      <SchemaFormPanel3 formData={formData} generatedHtml={generatedHtml} />
     </div>
   )
 }
