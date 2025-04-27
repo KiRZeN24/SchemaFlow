@@ -23,3 +23,7 @@ export interface NavbarProps {
   onConfigurationClick: () => void
 }
 
+export interface SchemaFormPanel3Props {
+  formData: FormData
+  generatedHtml: string
+}
