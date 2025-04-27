@@ -1,14 +1,8 @@
 import React from 'react'
 import './schemaFormPanel1.css'
-import { FormData } from './interfaces'
+import { SchemaFormPanel1Props } from './interfaces'
 
-interface Props {
-  onSchemaTypeChange: (schemaType: string) => void
-  onLoadJSON: (value: string) => void
-  onClearAll: () => void
-  currentFormData: FormData
-}
-const SchemaFormPanel1: React.FC<Props> = ({
+const SchemaFormPanel1: React.FC<SchemaFormPanel1Props> = ({
   onSchemaTypeChange,
   onLoadJSON,
   onClearAll,
@@ -17,8 +11,9 @@ const SchemaFormPanel1: React.FC<Props> = ({
   const handleSchemaTypeChange = (value: string) => {
     onSchemaTypeChange(value)
   }
+
   const loadJSON = () => {
-    const promptJSON = prompt('insert a JSON')
+    const promptJSON = prompt('Insert a JSON')
     if (promptJSON !== null) {
       onLoadJSON(promptJSON)
     }
