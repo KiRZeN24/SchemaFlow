@@ -1,6 +1,7 @@
 import React from 'react'
 import { SchemaFormPanel2Props } from './interfaces'
 import { FaTrash, FaArrowUp, FaArrowDown, FaEdit } from 'react-icons/fa'
+import ItemsGenerator from './itemsGenerator'
 
 const SchemaFormPanel2: React.FC<SchemaFormPanel2Props> = ({
   formData,
@@ -30,15 +31,12 @@ const SchemaFormPanel2: React.FC<SchemaFormPanel2Props> = ({
         />
       </label>
 
-      <label>
-        Add Subtitle:
-        <input
-          type="text"
-          value={newSubtitle}
-          onChange={(e) => setNewSubtitle(e.target.value)}
-        />
-        <button onClick={handleAddSubtitle}>Add</button>
-      </label>
+      <ItemsGenerator
+        label="Add Subtitle:"
+        inputValue={newSubtitle}
+        onInputChange={setNewSubtitle}
+        onAdd={handleAddSubtitle}
+      />
 
       <label>Set Active Subtitle:</label>
       <ul>
