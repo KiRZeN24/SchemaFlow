@@ -36,8 +36,7 @@ describe('Navbar', () => {
     const { container } = setupContainer()
     expect(within(container).getByRole('img')).toHaveAttribute(
       'src',
-      './src/assets/logo_icon_navbar.png',
+      '/src/assets/logo_icon_navbar.png',
     )
   })
 })
-
